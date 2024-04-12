@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display Data</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class=box><h1>Hello, <span id="name"></span>!</h1>
+	    <p>Number Submitted is:<br>
+            <span id="phone"></span>
+        </p>
+        <p>Your QR code is:<br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Qr-1.svg/220px-Qr-1.svg.png">
+        </p>
+    </div>
+	<script>
+        document.getElementById('name').innerText = localStorage.getItem('name');
+        document.getElementById('phone').innerText =localStorage.getItem('phone');
+    </script>
+</body>
+</html>

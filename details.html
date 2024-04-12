@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Details Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>Enter your details:</h1>
+  <form id="form">
+    <label for="name"><h2>Name:</h2></label>
+    <input type="text" id="name" name="name" placeholder="Abc Xyz" required>
+
+    <label for="phone"><h2>Phone Number:</h2></label>
+    <input type="tel" id="phone" name="phone" placeholder="01234 56789" maxlength="10">
+
+    <label id="OR">OR</label>
+
+    <label><h2>Social Media Handle</h2></label>
+    <div class="social-media-buttons">
+        <div class="social-media-button facebook-button" onclick="window.open('https://www.facebook.com/')"></div>
+        <div class="social-media-button twitter-button" onclick="window.open('https://twitter.com/')"></div>
+        <div class="social-media-button instagram-button" onclick="window.open('https://www.instagram.com/')"></div>
+    </div>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  </div>
+  
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      localStorage.setItem('name', name);
+	    localStorage.setItem('phone', phone);
+      window.location.href = 'display.html';
+    });
+  </script>
+</body>
+</html>
